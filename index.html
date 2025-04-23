@@ -4,10 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Speedcraft - 최적화된 마인크래프트 모드팩</title>
-  <!-- Galmuri11 폰트 링크 수정 -->
-  <link href="https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css" rel="stylesheet" type="text/css">
+  <!-- Galmuri11 폰트 링크 수정: 패키지 이름을 galmuri11로 변경 -->
+  <link href="https://cdn.jsdelivr.net/npm/galmuri11@latest/dist/galmuri11.css" rel="stylesheet" type="text/css">
   <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- 파비콘 추가 -->
   <style>
+    /* Galmuri11 폰트가 로드되지 않을 경우를 대비한 @font-face 선언 */
+    @font-face {
+      font-family: 'Galmuri11';
+      src: url('https://cdn.jsdelivr.net/npm/galmuri11@latest/dist/Galmuri11.woff2') format('woff2'),
+           url('https://cdn.jsdelivr.net/npm/galmuri11@latest/dist/Galmuri11.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     body {
       margin: 0;
       font-family: 'Galmuri11', sans-serif; /* 폰트 적용 */
