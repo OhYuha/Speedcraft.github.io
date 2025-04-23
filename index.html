@@ -1,66 +1,70 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Speedcraft</title>
-  <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speedcraft - 최적화된 마인크래프트 모드팩</title>
+  <link href="https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css" rel="stylesheet" type="text/css">
   <style>
-    @font-face {
-      font-family: 'Galmuuri11';
-      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Galmuuri11.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-    }
-
     body {
       margin: 0;
-      font-family: 'Galmuuri11', sans-serif;
-      background: #e0e0e0 url('https://www.transparenttextures.com/patterns/pixel-weave.png');
+      font-family: 'Galmuri11', sans-serif;
+      background-color: #fff;
       color: #333;
     }
 
     header {
-      background-color: #444;
-      color: #fff;
+      background-color: #111;
       padding: 1rem;
       text-align: center;
+      color: white;
       font-size: 2rem;
-      letter-spacing: 1px;
+      border-bottom: 4px solid #444;
     }
 
     nav {
-      background-color: #333;
+      background-color: #222;
       display: flex;
       justify-content: center;
       gap: 2rem;
-      padding: 0.5rem;
+      padding: 1rem;
+      border-bottom: 2px solid #333;
     }
 
     nav a {
       color: #fff;
       text-decoration: none;
-      font-size: 1.1rem;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
+      font-weight: bold;
     }
 
     section {
+      padding: 3rem 1rem;
       max-width: 800px;
-      margin: 2rem auto;
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      margin: 0 auto;
+      background-color: #fff8;
+      border: 2px solid #ccc;
+      border-radius: 1rem;
+      margin-top: 2rem;
     }
 
     h2 {
-      font-size: 1.5rem;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.5rem;
+      font-size: 1.8rem;
       margin-bottom: 1rem;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: white;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .download-btn:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
@@ -68,31 +72,29 @@
   <header>
     Speedcraft 모드팩
   </header>
-
   <nav>
-    <a href="#about">소개</a>
+    <a href="#intro">소개</a>
     <a href="#download">다운로드</a>
     <a href="#install">설치 방법</a>
   </nav>
 
-  <section id="about">
+  <section id="intro">
     <h2>소개</h2>
-    <p>Speedcraft는 최적화에 중점을 둔 마인크래프트 모드팩입니다. 빠른 성능과 간편한 플레이를 원하는 유저를 위해 구성되었어요!</p>
+    <p>Speedcraft는 최적화에 중점을 둔 마인크래프트 모드팩입니다. 렉 없이 쾌적한 플레이가 가능하며, 다양한 모드를 효율적으로 구성했습니다.</p>
   </section>
 
   <section id="download">
     <h2>다운로드</h2>
-    <p>Speedcraft 최신 버전은 아래 링크에서 다운로드할 수 있습니다:</p>
-    <p><a href="#">[다운로드 링크]</a></p>
+    <p>아래 버튼을 클릭하여 최신 버전의 Speedcraft 모드팩을 다운로드하세요.</p>
+    <a class="download-btn" href="Speedcraft By YUHA 1.21.5 ver.mrpack" download>📦 다운로드 (.mrpack)</a>
   </section>
 
   <section id="install">
     <h2>설치 방법</h2>
     <ol>
-      <li>다운로드한 zip 파일을 압축 해제합니다.</li>
-      <li>`.minecraft/mods` 폴더에 압축 해제한 모드를 넣습니다.</li>
-      <li>포지(Forge)로 마인크래프트를 실행하세요.</li>
+      <li>Modrinth 앱 또는 Prism Launcher를 설치합니다.</li>
+      <li>앱에서 ".mrpack" 파일을 불러옵니다.</li>
+      <li>자동으로 필요한 모드가 설치되고 플레이할 수 있습니다.</li>
     </ol>
   </section>
 </body>
-</html>
