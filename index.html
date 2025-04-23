@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Speedcraft - 최적화된 마인크래프트 모드팩</title>
   <link href="https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- 파비콘 추가 -->
   <style>
     body {
       margin: 0;
       font-family: 'Galmuri11', sans-serif;
       background-color: #fff;
       color: #333;
+      scroll-behavior: smooth; /* 부드러운 스크롤 */
     }
 
     header {
@@ -29,6 +31,7 @@
       gap: 2rem;
       padding: 1rem;
       border-bottom: 2px solid #333;
+      flex-wrap: wrap; /* 모바일에서 자동 줄바꿈 */
     }
 
     nav a {
@@ -66,6 +69,22 @@
     .download-btn:hover {
       background-color: #45a049;
     }
+
+    /* 반응형 디자인 */
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.5rem;
+      }
+
+      section {
+        padding: 2rem 1rem;
+      }
+
+      .download-btn {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -98,3 +117,4 @@
     </ol>
   </section>
 </body>
+</html>
