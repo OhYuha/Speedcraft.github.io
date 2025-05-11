@@ -1,0 +1,41 @@
+📦 사용된 모드 목록:
+1. reeses-sodium-options
+2. chat_heads
+3. cloth-config
+4. dynamic-fps
+5. fabric-api
+6. ferritecore
+7. freecam
+8. yet_another_config_lib_v3
+9. architectury
+10. appleskin
+11. lithium
+12. sodium-extra
+13. WI-Zoom
+14. iris
+15. BetterF3
+16. language-reload
+17. Gamma-Utils
+18. entityculling
+19. Zoomify
+20. placeholder-api
+21. betterstats
+22. sodium
+23. notenoughanimations
+24. ImmediatelyFast
+25. fabric-language-kotlin
+26. modelfix
+27. RoughlyEnoughItems
+28. tcdcommons
+29. modmenu
+30. koreanpatch
+31. Jade
+
+🎨 포함된 리소스팩:
+- Bare Bones 1.21.5
+
+✨ 포함된 쉐이더팩:
+- ComplementaryReimagined_r5.5.1
+- ComplementaryUnbound_r5.5.1
+- BSL_v10.0
+- BSLClassic_v10.0
