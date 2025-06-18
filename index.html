@@ -8,7 +8,366 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Galmuri11', sans-serif;
+      font-family: 'Galmuri11', sans-serif;<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speedcraft</title>
+    <style>
+        /* ------------------------- */
+        /* --- CSS 스타일 (시작) --- */
+        /* ------------------------- */
+
+        /* 폰트: 갈무리11 웹폰트 불러오기 */
+        @import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
+        /* --- 기본 스타일 리셋 및 설정 --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth; /* 부드러운 스크롤 효과 */
+        }
+
+        body {
+            font-family: 'Galmuri11', 'Minecraft', sans-serif;
+            background-color: #3b3b3b; /* 배경 이미지가 없을 경우 대비용 색상 */
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-repeat: repeat;
+            color: #FFFFFF; /* 기본 글자색: 흰색 */
+            image-rendering: pixelated; 
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+
+        /* --- 전체 레이아웃 컨테이너 --- */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- 헤더 (사이트 제목 & 네비게이션) --- */
+        header {
+            background-color: rgba(0, 0, 0, 0.6);
+            border: 3px solid #1E1E1E;
+            border-bottom: 3px solid #5A5A5A;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 48px;
+            color: #FFAA00; /* 마인크래프트 금색 느낌 */
+            text-shadow: 2px 2px #3E3E3E;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: #DDDDDD;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 10px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #FFFFFF;
+            text-shadow: 0 0 5px #FFFFFF;
+        }
+        
+        /* --- 메인 콘텐츠 섹션 --- */
+        .section {
+            background-color: rgba(54, 54, 54, 0.8);
+            border: 2px solid #1E1E1E;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            border-bottom: 2px solid #5A5A5A;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #55FFFF; /* 다이아몬드 색상 느낌 */
+        }
+
+        .section h3 {
+            font-size: 22px;
+            color: #FFAA00;
+            margin-bottom: 15px;
+            margin-top: 10px;
+        }
+
+        .section p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        /* --- 소개 (Hero 섹션) --- */
+        .hero {
+            text-align: center;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+        
+        /* --- 마인크래프트 스타일 버튼 --- */
+        .btn {
+            display: inline-block;
+            font-family: 'Galmuri11', sans-serif;
+            font-size: 20px;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 15px 30px;
+            background-color: #787878;
+            border-style: solid;
+            border-width: 3px;
+            border-color: #A9A9A9 #505050 #505050 #A9A9A9;
+            box-shadow: 0 0 0 2px #1E1E1E;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: #8A8A8A;
+        }
+
+        .btn:active {
+            border-color: #505050 #A9A9A9 #A9A9A9 #505050;
+            background-color: #696969;
+        }
+
+        .btn-primary {
+            background-color: #4CAF50;
+            border-color: #81C784 #388E3C #388E3C #81C784;
+        }
+
+        .btn-primary:hover {
+            background-color: #66BB6A;
+        }
+        
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        /* --- 모드 목록 스타일 --- */
+        .mod-list ul {
+            list-style: none;
+            columns: 2;
+            column-gap: 40px;
+        }
+        
+        @media (max-width: 600px) {
+            .mod-list ul { columns: 1; }
+        }
+
+        .mod-list li {
+            padding: 8px 0;
+            font-size: 16px;
+            border-bottom: 1px dashed #5A5A5A;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .mod-list li::before {
+            content: '■';
+            color: #FFAA00;
+            margin-right: 10px;
+        }
+
+        .mod-list li a {
+            text-decoration: none;
+            color: #FFFFFF;
+            transition: color 0.2s;
+        }
+
+        .mod-list li a:hover {
+            color: #55FFFF;
+            text-decoration: underline;
+        }
+        
+        /* --- 푸터 --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #AAAAAA;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-top: 3px solid #1E1E1E;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #55FFFF;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ----------------------- */
+        /* --- CSS 스타일 (끝) --- */
+        /* ----------------------- */
+    </style>
+</head>
+<body>
+
+    <!-- -------------------------- -->
+    <!-- --- HTML 내용 (시작) --- -->
+    <!-- -------------------------- -->
+
+    <div class="container">
+
+        <header>
+            <h1>Speedcraft</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">소개</a></li>
+                    <li><a href="#mods">모드 목록</a></li>
+                    <li><a href="#install">설치 가이드</a></li>
+                    <li><a href="https://discord.gg/fVCEJPKNvB" target="_blank">커뮤니티 (Discord)</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- 섹션 1: 소개 -->
+            <section id="about" class="section hero">
+                <h2>바닐라를 더 빠르게!</h2>
+                <p>
+                    스피드런에 최적화된 모드팩입니다.<br>
+                    렉을 줄여주는 다양한 최적화 모드와 편의성 모드가 들어있습니다.
+                </p>
+                <a href="#install" class="btn btn-primary">모드팩 설치하기</a>
+            </section>
+
+            <!-- 섹션 2: 모드 목록 -->
+            <section id="mods" class="section mod-list">
+                <h2>모드 목록</h2>
+                <ul>
+                    <li><a href="https://modrinth.com/mod/sodium" target="_blank">Sodium</a></li>
+                    <li><a href="https://modrinth.com/mod/lithium" target="_blank">Lithium</a></li>
+                    <li><a href="https://modrinth.com/mod/starlight" target="_blank">Starlight</a></li>
+                    <li><a href="https://modrinth.com/mod/ferrite-core" target="_blank">FerriteCore</a></li>
+                    <li><a href="https://modrinth.com/mod/immediatelyfast" target="_blank">ImmediatelyFast</a></li>
+                    <li><a href="https://www.curseforge.com/minecraft/mc-mods/moreculling" target="_blank">MoreCulling</a></li>
+                    <li><a href="https://modrinth.com/mod/krypton" target="_blank">Krypton</a></li>
+                    <li><a href="https://modrinth.com/mod/lazydfu" target="_blank">LazyDFU</a></li>
+                    <li><a href="https://www.curseforge.com/minecraft/mc-mods/entityculling" target="_blank">EntityCulling</a></li>
+                    <li><a href="https://modrinth.com/mod/alternate-current" target="_blank">Alternate Current</a></li>
+                    <li><a href="https://modrinth.com/mod/modmenu" target="_blank">Mod Menu</a></li>
+                    <li><a href="https://modrinth.com/mod/yacl" target="_blank">YetAnotherConfigLib</a></li>
+                    <li><a href="https://modrinth.com/mod/cloth-config" target="_blank">Cloth Config API</a></li>
+                    <li><a href="https://modrinth.com/mod/fabric-api" target="_blank">Fabric API</a></li>
+                    <li><a href="https://modrinth.com/mod/fabric-language-kotlin" target="_blank">Fabric Language Kotlin</a></li>
+                    <li><a href="https://modrinth.com/mod/architectury-api" target="_blank">Architectury API</a></li>
+                    <li><a href="https://modrinth.com/mod/indium" target="_blank">Indium</a></li>
+                    <li><a href="https://modrinth.com/mod/iris" target="_blank">Iris Shaders</a></li>
+                    <li><a href="https://modrinth.com/mod/continuity" target="_blank">Continuity</a></li>
+                    <li><a href="https://modrinth.com/mod/sodium-extra" target="_blank">Sodium Extra</a></li>
+                    <li><a href="https://modrinth.com/mod/reeses-sodium-options" target="_blank">Reese's Sodium Options</a></li>
+                    <li><a href="https://modrinth.com/mod/bobby" target="_blank">Bobby</a></li>
+                    <li><a href="https://modrinth.com/mod/no-chat-reports" target="_blank">No Chat Reports</a></li>
+                    <li><a href="https://www.curseforge.com/minecraft/mc-mods/e4s-fake-d-menu" target="_blank">e4shn4r's (E4) FDM</a></li>
+                    <li><a href="https://modrinth.com/mod/dynamic-fps" target="_blank">Dynamic FPS</a></li>
+                    <li><a href="https://www.curseforge.com/minecraft/mc-mods/atum" target="_blank">Atum</a></li>
+                    <li><a href="https://modrinth.com/mod/speedrunigt" target="_blank">SpeedRunIGT</a></li>
+                    <li><a href="https://github.com/maru-n/state-tracker" target="_blank">State-Tracker</a></li>
+                    <li><a href="https://www.curseforge.com/minecraft/mc-mods/lazy-language-loader" target="_blank">Lazy-Language-Loader</a></li>
+                    <li><a href="#" target="_blank">Sleep-Tight</a></li>
+                    <li><a href="https://modrinth.com/mod/standard-settings" target="_blank">StandardSettings</a></li>
+                    <li><a href="#" target="_blank">Set-World-Spawn-Point</a></li>
+                    <li><a href="#" target="_blank">Force-Port</a></li>
+                    <li><a href="https://modrinth.com/mod/world-preview" target="_blank">World-Preview</a></li>
+                    <li><a href="#" target="_blank">Light-Recalculation-Fix</a></li>
+                    <li><a href="https://modrinth.com/mod/mouse-tweaks" target="_blank">Mouse-Tweaks</a></li>
+                    <li><a href="https://modrinth.com/mod/antighost" target="_blank">AntiGhost</a></li>
+                    <li><a href="https://www.curseforge.com/minecraft/mc-mods/held-item-info" target="_blank">Held-Item-Info</a></li>
+                    <li><a href="#" target="_blank">Crafting-Tweaks</a></li>
+                    <li><a href="https://modrinth.com/mod/appleskin" target="_blank">AppleSkin</a></li>
+                    <li><a href="https://modrinth.com/mod/controlling" target="_blank">Controlling</a></li>
+                    <li><a href="https://modrinth.com/mod/perspective-mod-redux" target="_blank">Perspective-Mod-Redux</a></li>
+                    <li><a href="https://modrinth.com/mod/betterf3" target="_blank">BetterF3</a></li>
+                    <li><a href="#" target="_blank">Debug-Key-Binding</a></li>
+                    <li><a href="#" target="_blank">F3-Copy-Action</a></li>
+                    <li><a href="https://modrinth.com/mod/zoomify" target="_blank">Zoomify</a></li>
+                    <li><a href="https://www.curseforge.com/minecraft/mc-mods/itemswapper" target="_blank">Item-Swapper</a></li>
+                </ul>
+            </section>
+
+            <!-- 섹션 3: 설치 가이드 (업데이트됨) -->
+            <section id="install" class="section">
+                <h2>설치 가이드</h2>
+                
+                <h3>1단계: 런처 준비하기</h3>
+                <p>
+                    모드팩을 간편하게 설치하고 실행하기 위해선 전용 런처가 필요합니다.<br>
+                    아래 런처 중 하나를 골라 설치해주세요.
+                </p>
+                <div class="button-group">
+                    <a href="https://modrinth.com/app" class="btn btn-primary" target="_blank">Modrinth 앱 (권장)</a>
+                    <a href="https://prismlauncher.org/download/" class="btn" target="_blank">Prism Launcher</a>
+                </div>
+                
+                <hr style="margin: 30px 0; border: 1px solid #5A5A5A;">
+
+                <h3>2단계: 모드팩 설치하기</h3>
+                <p>
+                    런처를 통해 모드린스에서 바로 설치하거나, 사이트에서 직접 파일을 다운로드 받아<br>
+                    런처에 수동으로 추가할 수 있습니다.
+                </p>
+                <div class="button-group">
+                    <a href="https://modrinth.com/modpack/speedcrafty" class="btn" target="_blank">Modrinth에서 설치</a>
+                    <!-- 중요: 아래 href는 실제 깃허브 릴리즈 파일 주소로 꼭 변경해주세요! -->
+                    <a href="https://github.com/OhYuha/Speedcraft/releases/download/latest/Speedcraft.zip" class="btn" target="_blank">사이트 직접 다운로드</a>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>© 2024 Speedcraft. All Rights Reserved.</p>
+            <p>
+                This project is licensed under 
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+                CC BY-NC-SA 4.0
+                </a>
+            </p>
+            <p>This site is not affiliated with Mojang or Microsoft.</p>
+        </footer>
+
+    </div>
+
+    <!-- ------------------------ -->
+    <!-- --- HTML 내용 (끝) --- -->
+    <!-- ------------------------ -->
+
+</body>
+</html>
       background-color: #fff;
       color: #333;
     }
